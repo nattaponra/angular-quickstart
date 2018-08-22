@@ -18,11 +18,18 @@ export class HeroesComponent implements OnInit {
   
    }
 
-  
-   getHeroes():void {
+   /** Original
+     getHeroes():void {
      this.heroes = this.heroService.getHeroes();
      console.log(this.heroes);
    }
+  */
+
+   /** Observable */
+   getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
+  }
 
    ngOnInit() {
     this.getHeroes();

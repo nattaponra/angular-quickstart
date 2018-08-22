@@ -10,7 +10,15 @@ export class HeroService {
 
   constructor() { }
 
+  /** Original 
   getHeroes(): Hero[] {
     return HEROES;
+  }
+  */
+
+  /** Observable */
+  getHeroes(): Observable<Hero[]> {
+    console.log(of(HEROES));
+    return of(HEROES);
   }
 }
